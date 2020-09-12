@@ -5,12 +5,14 @@ import CircleButton from '../CircleButton/CircleButton'
 import ApiContext from '../ApiContext'
 import { countNotesForFolder } from '../notes-helpers'
 import './NoteListNav.css'
+import config from '../config'
 
 export default class NoteListNav extends React.Component {
   static contextType = ApiContext;
 
   render() {
     const { folders = [], notes = [] } = this.context
+    console.log(folders);
     return (
       <div className='NoteListNav'>
         <ul className='NoteListNav__list'>
@@ -23,7 +25,7 @@ export default class NoteListNav extends React.Component {
                 <span className='NoteListNav__num-notes'>
                   {countNotesForFolder(notes, folder.id)}
                 </span>
-                {folder.name}
+                {folder.folder_name}
               </NavLink>
             </li>
           )}

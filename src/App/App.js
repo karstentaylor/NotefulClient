@@ -48,6 +48,8 @@ class App extends Component {
         folder
       ]
     })
+    this.componentDidMount();
+    console.log(this.notes);
   }
 
   handleAddNote = note => {
