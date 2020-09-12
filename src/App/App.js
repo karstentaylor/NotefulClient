@@ -49,7 +49,6 @@ class App extends Component {
       ]
     })
     this.componentDidMount();
-    console.log(this.notes);
   }
 
   handleAddNote = note => {
@@ -59,6 +58,7 @@ class App extends Component {
         note
       ]
     })
+    this.componentDidMount();
   }
 
   handleDeleteNote = noteId => {
@@ -70,7 +70,7 @@ class App extends Component {
   renderNavRoutes() {
     return (
       <>
-        {['/', '/folders/:folderId'].map(path =>
+        {['/', '/folder/:folderId'].map(path =>
           <Route
             exact
             key={path}
@@ -79,7 +79,7 @@ class App extends Component {
           />
         )}
         <Route
-          path='/notes/:noteId'
+          path='/note/:noteId'
           component={NotePageNav}
         />
         <Route

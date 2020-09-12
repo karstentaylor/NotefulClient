@@ -42,7 +42,7 @@ export default class Note extends React.Component {
     return (
       <div className='Note'>
         <h2 className='Note__title'>
-          <Link to={`/note/${id}`}>
+          <Link to={`/note/${id}`} >
             {note_name}
           </Link>
         </h2>
